@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
+  resources :directors
+  resources :movies
 
-  # This is a blank app! Pick your first screen, build out the RCAV, and go from there. E.g.:
-
-  # get "/your_first_screen" => "pages#first"
-  
+  root "movies#index"
 end
