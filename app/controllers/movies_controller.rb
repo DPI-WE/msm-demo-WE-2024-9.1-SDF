@@ -21,7 +21,6 @@ class MoviesController < ApplicationController
 
   # POST /movies or /movies.json
   def create
-    debugger
     @movie = Movie.new(movie_params)
 
     respond_to do |format|
