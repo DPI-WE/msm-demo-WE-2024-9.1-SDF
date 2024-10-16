@@ -1,7 +1,7 @@
 <div id="<%= dom_id director %>">
   <p>
     <strong>Dob:</strong>
-    <%= director.date_of_birth %>
+    <%= director.date_of_birth.strftime("%A, %B %e, %Y") %>
   </p>
 
   <p>
