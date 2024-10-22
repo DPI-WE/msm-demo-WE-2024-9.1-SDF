@@ -78,7 +78,6 @@ gem "appdev_support"
 gem "awesome_print"
 gem "devise"
 gem "dotenv-rails"
-gem "faker"
 gem "htmlbeautifier"
 gem "http"
 gem "sqlite3", "~> 1.4"
@@ -101,6 +100,7 @@ end
 
 group :development, :test do
   gem "rspec-rails", "~> 6.0.0"
+  gem "faker"
 end
 
 group :test do
