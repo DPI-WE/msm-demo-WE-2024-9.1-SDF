@@ -3,20 +3,36 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
+    @breadcrumbs = [
+      {content: "Movies", href: movies_path}
+    ]
     @movies = Movie.all
   end
 
   # GET /movies/1 or /movies/1.json
   def show
+    @breadcrumbs = [
+      {content: "Movies", href: movies_path},
+      {content: @movie.to_s},
+    ]
   end
 
   # GET /movies/new
   def new
+    @breadcrumbs = [
+      {content: "Movies", href: movies_path},
+      {content: "New"},
+    ]
     @movie = Movie.new
   end
 
   # GET /movies/1/edit
   def edit
+    @breadcrumbs = [
+      {content: "Movies", href: movies_path},
+      {content: @movie.to_s},
+      {content: "Edit"},
+    ]
   end
 
   # POST /movies or /movies.json
