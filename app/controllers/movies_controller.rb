@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
     @breadcrumbs = [
       {content: "Movies", href: movies_path}
     ]
-    @movies = Movie.all
+    @movies = Movie.page(params[:page]).per(10)
   end
 
   # GET /movies/1 or /movies/1.json
