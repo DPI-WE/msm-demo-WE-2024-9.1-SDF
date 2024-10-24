@@ -1,0 +1,5 @@
+<div class="list-group list-group-flush">
+  <% @movies.each do |movie| %>
+    <%= render "list_group_item", movie: movie %>
+  <% end %>
+</div>

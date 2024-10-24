@@ -1,17 +1,13 @@
+<div class="container-fluid">
+  <div class="card" id="movies">
+    <div class="card-header d-flex justify-content-end align-items-center">
+      <h1 class="visually-hidden">Movies</h1>
+      <%= link_to "New", new_movie_path %>
+    </div>
+    <%= render "list_group", movies: @movies %>
+  </div>
 
-<h1>Movies</h1>
-
-<div id="movies">
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New movie", new_movie_path %>
-
-<div class="my-2 d-flex justify-content-center">
-  <%= paginate @movies %>
+  <div class="my-2 d-flex justify-content-center">
+    <%= paginate @movies %>
+  </div>
 </div>

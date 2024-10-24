@@ -1,0 +1,8 @@
+<%= link_to movie_path(movie), class: "list-group-item list-group-item-action" do %>
+  <div class="d-flex w-100 justify-content-between">
+    <h5 class="mb-1"><%= movie.title %></h5>
+    <small class="text-body-secondary"><%= movie.year %></small>
+  </div>
+  <!-- TODO: add brief movie teaser -->
+  <small class="text-body-secondary">Directed by <%= movie.director.name %></small>
+<% end %>
