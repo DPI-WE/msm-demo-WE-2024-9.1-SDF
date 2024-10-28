@@ -1,6 +1,6 @@
 <%= search_form_for @q do |f| %>
   <div class="input-group">
-    <%= f.text_field :title_cont, class: "form-control", placeholder: "Search movies" %>
+    <%= f.search_field :title_or_director_name_cont, class: "form-control", placeholder: "Search movies" %>
     <%= f.submit "Search", class: "btn btn-primary" %>
     <%= link_to "Clear", movies_path, class: "btn btn-outline-secondary" %>
   </div>
