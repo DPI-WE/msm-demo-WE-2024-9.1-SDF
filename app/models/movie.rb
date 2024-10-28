@@ -23,4 +23,12 @@ class Movie < ApplicationRecord
   def to_s
     "#{title} (#{year})"
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["title", "year"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["director"]
+  end
 end

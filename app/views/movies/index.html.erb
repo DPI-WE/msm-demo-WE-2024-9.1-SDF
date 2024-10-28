@@ -1,9 +1,17 @@
 <div class="container-fluid">
+  <h1 class="visually-hidden">Movies</h1>
   <div class="card" id="movies">
-    <div class="card-header d-flex justify-content-end align-items-center">
-      <h1 class="visually-hidden">Movies</h1>
-      <%= link_to "New", new_movie_path %>
+    <div class="card-header d-flex align-items-center">
+      <div class="flex-fill">
+        <%= render "search" %>
+      </div>
+      <%= link_to "New", new_movie_path, class: "ms-4" %>
     </div>
+    <div class="d-flex justify-content-between m-2">
+      <%= sort_link(@q, :title, "Title", class: "btn btn-outline-info") %>
+      <%= sort_link(@q, :year, "Year", class: "btn btn-outline-info") %>
+    </div>
+
     <%= render "list_group", movies: @movies %>
   </div>
 

@@ -10,4 +10,9 @@
 #  updated_at    :datetime         not null
 #
 class Director < ApplicationRecord
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["name"]
+  end
+
 end
