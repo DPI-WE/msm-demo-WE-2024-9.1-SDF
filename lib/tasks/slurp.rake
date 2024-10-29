@@ -3,18 +3,10 @@ require "csv"
 namespace :slurp do
   desc "Import directors from lib/csvs/directors.csv"
   task directors: :environment do
-    # read the file into text
     csv_text = File.read(Rails.root.join("lib", "csvs", "directors.csv"))
-
-    # load the text into CSV object
     csv = CSV.parse(csv_text, headers: true)
-
     count = 0
-    # for each row in csv
     csv.each do |row|
-      # puts row.to_hash
-      # create a director
-      # id,name,dob,bio,image,created_at,updated_at
       Director.create!(
         id: row["id"],
         name: row["name"],
@@ -32,7 +24,6 @@ namespace :slurp do
     csv = CSV.parse(csv_text, headers: true)
     count = 0
     csv.each do |row|
-      # id,title,year,duration,description,image,director_id,created_at,updated_at
       director = Director.find_by(id: row["director_id"])
 
       Movie.create!(
