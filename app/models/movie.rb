@@ -19,6 +19,7 @@
 #
 class Movie < ApplicationRecord
   belongs_to :director
+  has_many :likes, as: :likeable
 
   def to_s
     "#{title} (#{year})"

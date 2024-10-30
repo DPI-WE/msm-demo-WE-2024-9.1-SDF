@@ -10,6 +10,7 @@
 #  updated_at    :datetime         not null
 #
 class Director < ApplicationRecord
+  has_many :likes, as: :likeable
 
   def self.ransackable_attributes(auth_object = nil)
     ["name"]
