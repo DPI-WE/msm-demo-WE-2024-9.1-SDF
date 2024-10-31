@@ -1,0 +1,10 @@
+<%= form_with(model: like, local: false, id: dom_id(like)) do |form| %>
+
+  <%= form.hidden_field :likeable_id %>
+  <%= form.hidden_field :likeable_type %>
+
+  <button type="submit" class="btn btn-primary">
+    <i class="fa-regular fa-thumbs-up"></i>
+    <%= like.likeable.likes.count %>
+  </button>
+<% end %>

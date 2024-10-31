@@ -1,0 +1,17 @@
+// find existing form
+var existingForm = $("#<%= dom_id(Like.new) %>");
+
+// render new like form
+var newForm = "<%= j(render 'likes/form', like: Like.new(likeable: @like.likeable)) %>";
+
+// replace existing form with the new form
+existingForm.replaceWith(newForm);
+
+// find icon
+var icon = $("#<%= dom_id(Like.new) %> .fa-thumbs-up");
+
+// add bounce animation
+icon.addClass("fa-bounce");
+
+// in 1 second, remove bounce class from icon
+setTimeout(() => icon.removeClass("fa-bounce"), 1000);
