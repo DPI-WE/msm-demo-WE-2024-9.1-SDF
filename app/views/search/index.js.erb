@@ -1,0 +1,6 @@
+
+var existingResults = $("#search-results");
+
+var newResults = "<%= j(render('search/list_group', results: @results)) %>"
+
+existingResults.replaceWith(newResults);

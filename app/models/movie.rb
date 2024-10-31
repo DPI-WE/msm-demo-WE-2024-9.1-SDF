@@ -21,6 +21,9 @@ class Movie < ApplicationRecord
   belongs_to :director
   has_many :likes, as: :likeable
 
+  include PgSearch::Model
+  multisearchable against: [:title, :year]
+
   def to_s
     "#{title} (#{year})"
   end
