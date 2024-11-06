@@ -1,5 +1,9 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ new create edit update destroy ]
+  before_action { authorize(@movie || Movie) }
+
+  # TODO: add authrorization before_action
 
   # GET /movies or /movies.json
   def index
@@ -40,7 +44,7 @@ class MoviesController < ApplicationController
 
   # POST /movies or /movies.json
   def create
-    @movie = Movie.new(movie_params)
+    @movie = current_user.submitted_movies.new(movie_params)
 
     respond_to do |format|
       if @movie.save

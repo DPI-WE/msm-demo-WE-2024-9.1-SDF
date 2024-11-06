@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_05_191533) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_06_194153) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,7 +36,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_05_191533) do
     t.bigint "director_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "submitter_id"
     t.index ["director_id"], name: "index_movies_on_director_id"
+    t.index ["submitter_id"], name: "index_movies_on_submitter_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -72,4 +74,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_05_191533) do
   end
 
   add_foreign_key "movies", "directors"
+  add_foreign_key "movies", "users", column: "submitter_id"
 end
