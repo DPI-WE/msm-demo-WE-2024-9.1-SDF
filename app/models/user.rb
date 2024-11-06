@@ -35,4 +35,6 @@ class User < ApplicationRecord
          :rememberable,
          :trackable,
          :validatable
+
+  has_many :submitted_movies, foreign_key: "submitter_id", class_name: "Movie"
 end
