@@ -14,4 +14,14 @@
     <%= movie.director_id %>
   </p>
 
+  <% if movie.submitter.present? %>
+    <p>
+      <strong>Submitted By:</strong>
+      <%= movie.submitter.username %>
+      <% if movie.submitter.avatar.attached? %>
+        <%= image_tag(movie.submitter.avatar, class: "img-thumbnail") %>
+      <% end %>
+    </p>
+  <% end %>
+
 </div>
