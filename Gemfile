@@ -36,6 +36,7 @@ end
 gem "active_link_to"
 gem "appdev_support"
 gem "awesome_print"
+gem 'aws-sdk-s3', require: false
 gem "bootsnap", require: false
 gem "carrierwave"
 gem "devise"

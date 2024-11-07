@@ -37,4 +37,6 @@ class User < ApplicationRecord
          :validatable
 
   has_many :submitted_movies, foreign_key: "submitter_id", class_name: "Movie"
+
+  has_one_attached :avatar
 end
