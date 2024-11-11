@@ -1,17 +1,21 @@
+<div class="container">
 
-<h1>Directors</h1>
+  <div class="d-flex justify-content-between align-items-center">
+    <h1>Directors</h1>
+    <%= link_to "New director", new_director_path %>
+  </div>
 
-<div id="directors">
-  <% @directors.each do |director| %>
-    <%= render director %>
-    <p>
-      <%= link_to "Show this director", director %>
-    </p>
-  <% end %>
-</div>
+  <div id="directors">
+    <div class="row">
+      <% @directors.each do |director| %>
+        <div class="col-12 col-md-4 col-xxl-3 my-2">
+          <%= render "directors/card", director: director %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-<%= link_to "New director", new_director_path %>
-
-<div class="my-2 d-flex justify-content-center">
-  <%= paginate @directors %>
+  <div class="my-2 d-flex justify-content-center">
+    <%= paginate @directors %>
+  </div>
 </div>
