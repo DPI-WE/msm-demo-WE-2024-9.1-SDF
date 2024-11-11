@@ -21,22 +21,12 @@
 #  fk_rails_...  (submitter_id => users.id)
 #
 class Movie < ApplicationRecord
+  include Likeable, PgSearchable, Ransackable
+
   belongs_to :director
   belongs_to :submitter, class_name: "User"
-  has_many :likes, as: :likeable
-
-  include PgSearch::Model
-  multisearchable against: [:title, :year]
 
   def to_s
     "#{title} (#{year})"
-  end
-
-  def self.ransackable_attributes(auth_object = nil)
-    ["title", "year"]
-  end
-
-  def self.ransackable_associations(auth_object = nil)
-    ["director"]
   end
 end

@@ -10,14 +10,7 @@
 #  updated_at    :datetime         not null
 #
 class Director < ApplicationRecord
-  has_many :likes, as: :likeable
-
-  include PgSearch::Model
-  multisearchable against: [:name, :bio]
-
-  def self.ransackable_attributes(auth_object = nil)
-    ["name"]
-  end
+  include Likeable, PgSearchable, Ransackable
 
   def to_s
     "#{name} (#{date_of_birth.year})"
