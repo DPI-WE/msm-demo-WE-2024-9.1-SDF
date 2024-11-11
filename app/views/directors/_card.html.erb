@@ -1,0 +1,9 @@
+<div class="card h-100">
+  <div class="card-body">
+    <h5 class="card-title"><%= director.name %></h5>
+    <p class="card-text"><%= director.bio.truncate_words(25) %></p>
+  </div>
+  <div class="card-footer">
+    <%= link_to "Show details", director, class: "btn btn-primary w-100" %>
+  </div>
+</div>
