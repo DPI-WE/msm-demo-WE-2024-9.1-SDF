@@ -12,6 +12,8 @@
 class Director < ApplicationRecord
   include Likeable, PgSearchable, Ransackable
 
+  has_many :movies
+
   def to_s
     "#{name} (#{date_of_birth.year})"
   end

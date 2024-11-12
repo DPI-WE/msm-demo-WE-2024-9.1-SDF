@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Analytics</h1>
+
+  <div class="my-5">
+    <%= pie_chart number_of_films_by_director_analytics_path, title: "Number of Films By Director", donut: true, legend: false %>
+  </div>
+
+  <div class="my-5">
+    <%= line_chart number_of_films_by_year_analytics_path, title: "Number of Films By Year" %>
+  </div>
+
+  <div class="my-5">
+    <%= column_chart movies_by_popularity_analytics_path, title: "Most Popular Movies" %>
+  </div>
+
+  <div class="my-5">
+    <%= column_chart directors_by_popularity_analytics_path, title: "Most Popular Directors" %>
+  </div>
+</div>
