@@ -39,6 +39,7 @@ gem "awesome_print"
 gem 'aws-sdk-s3', require: false
 gem "bootsnap", require: false
 gem "carrierwave"
+gem "chartkick", "~> 5.1"
 gem "devise"
 gem "dotenv-rails"
 gem "htmlbeautifier"

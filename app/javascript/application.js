@@ -4,6 +4,9 @@ import "controllers"
 
 Turbo.session.drive = false
 
+import "chartkick"
+import "Chart.bundle"
+
 import jquery from "jquery";
 window.jQuery = jquery;
 window.$ = jquery;
