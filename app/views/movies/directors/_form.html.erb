@@ -1,0 +1,41 @@
+<div data-controller="movies--directors--form">
+  <button
+    type="button"
+    class="btn btn-outline-primary"
+    data-action="click->movies--directors--form#toggle"
+    data-movies--directors--form-target="toggleButton"
+  >
+    Create New Director
+  </button>
+
+  <div
+    class="my-2" 
+    data-movies--directors--form-target="directorSelect"
+  >
+    <%= form.label :director_id, class: "form-label" %>
+    <%= form.collection_select :director_id, Director.all, :id, :name, {}, class: "form-control" %>
+  </div>
+
+  <div
+    class="visually-hidden"
+    data-movies--directors--form-target="directorForm"
+  >
+    <h3>New Director</h3>
+    <%= form.fields_for :director do |director_form| %>
+      <div>
+        <%= director_form.label :name, class: "form-label" %>
+        <%= director_form.text_field :name, class: "form-control" %>
+      </div>
+
+      <div>
+        <%= director_form.label :date_of_birth, class: "form-label" %>
+        <%= director_form.datetime_field :date_of_birth, class: "form-control" %>
+      </div>
+
+      <div>
+        <%= director_form.label :bio, class: "form-label" %>
+        <%= director_form.text_area :bio, class: "form-control" %>
+      </div>
+    <% end %>
+  </div>
+</div>
