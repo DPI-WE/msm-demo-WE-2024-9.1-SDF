@@ -24,6 +24,7 @@ class Movie < ApplicationRecord
   include Likeable, PgSearchable, Ransackable
 
   belongs_to :director
+  accepts_nested_attributes_for :director, reject_if: :all_blank
   belongs_to :submitter, class_name: "User"
 
   def to_s

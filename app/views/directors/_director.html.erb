@@ -1,8 +1,10 @@
 <div id="<%= dom_id director %>">
-  <p>
-    <strong>Dob:</strong>
-    <%= director.date_of_birth.strftime("%A, %B %e, %Y") %>
-  </p>
+  <% if director.date_of_birth.present? %>
+    <p>
+      <strong>Dob:</strong>
+      <%= director.date_of_birth.strftime("%A, %B %e, %Y") %>
+    </p>
+  <% end %>
 
   <p>
     <strong>Name:</strong>

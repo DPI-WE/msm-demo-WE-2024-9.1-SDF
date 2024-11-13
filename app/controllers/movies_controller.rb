@@ -31,6 +31,7 @@ class MoviesController < ApplicationController
       {content: "New"},
     ]
     @movie = Movie.new
+    @movie.build_director
   end
 
   # GET /movies/1/edit
@@ -87,6 +88,11 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :year, :director_id)
+    params.require(:movie)
+          .permit(
+            :title,
+            :year,
+            :director_id,
+            director_attributes: [:id, :name, :date_of_birth, :bio])
   end
 end

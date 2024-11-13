@@ -1,14 +1,15 @@
+<div class="container">
+  <%= render @movie %>
 
-<%= render @movie %>
+  <div>
+    <% if policy(@movie).edit? %>
+      <%= link_to "Edit this movie", edit_movie_path(@movie) %>
+    <% end %>
+    <%= render "likes/form", like: Like.new(likeable: @movie) %>
 
-<div>
-  <% if policy(@movie).edit? %>
-    <%= link_to "Edit this movie", edit_movie_path(@movie) %>
-  <% end %>
-  <%= render "likes/form", like: Like.new(likeable: @movie) %>
-
-  <%# if MoviePolicy.new(current_user, @movie).destroy? %>
-  <% if policy(@movie).destroy? %>
-    <%= button_to "Destroy this movie", @movie, method: :delete %>
-  <% end %>
+    <%# if MoviePolicy.new(current_user, @movie).destroy? %>
+    <% if policy(@movie).destroy? %>
+      <%= button_to "Destroy this movie", @movie, method: :delete %>
+    <% end %>
+  </div>
 </div>

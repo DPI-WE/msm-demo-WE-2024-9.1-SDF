@@ -11,22 +11,21 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="my-2">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :year, style: "display: block" %>
-    <%= form.text_field :year %>
+  <div class="my-2">
+    <%= form.label :year, class: "form-label" %>
+    <%= form.text_field :year, class: "form-control" %>
+  </div>
+  
+  <div class="my-2">
+    <%= render "movies/directors/form", form: form %>
   </div>
 
-  <div>
-    <%= form.label :director_id, style: "display: block" %>
-    <%= form.text_field :director_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="my-2">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

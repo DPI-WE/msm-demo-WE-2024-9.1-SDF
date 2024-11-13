@@ -11,7 +11,7 @@
 
   <p>
     <strong>Director:</strong>
-    <%= movie.director_id %>
+    <%= link_to movie.director.name, director_path(movie.director) %>
   </p>
 
   <% if movie.submitter.present? %>
