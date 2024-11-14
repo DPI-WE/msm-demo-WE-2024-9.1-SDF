@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: msm-we-2024-9-1-sdf
+    name: msm_we_2024_9_1_sdf
     env: ruby # this app is written in ruby
     plan: free # make sure to set this to free or you'll get billed $$$
     buildCommand: "./bin/render-build.sh" # # we already created these two files for you
@@ -10,7 +10,7 @@ services:
         generateValue: true
       - key: DATABASE_URL
         fromDatabase:
-          name: msm-we-2024-9-1-sdf
+          name: msm_we_2024_9_1_sdf
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
@@ -18,7 +18,7 @@ services:
         value: 2 # sensible default
 
 databases:
-  - name: msm-we-2024-9-1-sdf
-    databaseName: msm-we-2024-9-1-sdf
-    user: msm-we-2024-9-1-sdf
+  - name: msm_we_2024_9_1_sdf
+    databaseName: msm_we_2024_9_1_sdf
+    user: msm_we_2024_9_1_sdf
     plan: free
