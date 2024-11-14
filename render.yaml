@@ -8,3 +8,17 @@ services:
     envVars: # this section sets some ENV variables needed by Render for deployment
       - key: SECRET_KEY_BASE
         generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: msm-we-2024-9-1-sdf
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default
+
+databases:
+  - name: msm-we-2024-9-1-sdf
+    databaseName: msm-we-2024-9-1-sdf
+    user: msm-we-2024-9-1-sdf
+    plan: free
