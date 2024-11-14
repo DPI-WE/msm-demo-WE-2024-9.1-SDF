@@ -28,8 +28,8 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
-  devise :confirmable,
-         :database_authenticatable,
+  # TODO: add :confirmable back when email is configured
+  devise :database_authenticatable,
          :recoverable,
          :registerable,
          :rememberable,

@@ -25,7 +25,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   # TODO: changeme
-  config.mailer_sender = 'no-reply@example.com'
+  config.mailer_sender = 'no-reply@msm-we-2024-9-1-sdf.onrender.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

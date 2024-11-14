@@ -73,8 +73,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  # TODO: set url for mailers
-  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'msm-we-2024-9-1-sdf.onrender.com', port: 3000 }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
