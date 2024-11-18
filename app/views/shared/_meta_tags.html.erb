@@ -1,5 +1,21 @@
 <!-- meta tags -->
-<title>Must See Movies</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
+<%=
+  display_meta_tags({
+    site: "Must See Movies",
+    image: image_url("movie-clapper"),
+    description: "A demo application built in class for cohort WE-2024-9.1-SDF",
+    og: {
+      title: "Must See Movies",
+      image: asset_url("movie-clapper"),
+      description: "A demo application built in class for cohort WE-2024-9.1-SDF",
+      site_name: "Must See Movies"
+    },
+  })
+%>
+
+
 <%= csrf_meta_tags %>
 <%= csp_meta_tag %>
