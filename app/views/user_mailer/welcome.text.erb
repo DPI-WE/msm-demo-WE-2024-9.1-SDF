@@ -1,0 +1,13 @@
+Hi <%= @user.username %>,
+
+Thank you for signing up. We are so happy to have you. If you have any questions, comments, or concerns, please reply to this email.
+
+For now, I encourage you to check out our top 3 most popular movies:
+
+<% Movie.order_by_popularity.limit(3).each do |movie| %>
+  - <%= movie.title %>: <%= url_for movie %>
+<% end %>
+
+Happy Viewing 🎥🎬🍿
+
+Ian
