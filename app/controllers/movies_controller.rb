@@ -22,6 +22,8 @@ class MoviesController < ApplicationController
       {content: "Movies", href: movies_path},
       {content: @movie.to_s},
     ]
+
+    set_meta_tags @movie.to_meta_tags
   end
 
   # GET /movies/new
@@ -92,6 +94,7 @@ class MoviesController < ApplicationController
           .permit(
             :title,
             :year,
+            :poster,
             :director_id,
             director_attributes: [:id, :name, :date_of_birth, :bio])
   end

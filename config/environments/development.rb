@@ -1,6 +1,9 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  # TODO: refactor to handle different codespaces and dev environments like localhost:3000
+  routes.default_url_options[:host] = 'https://silver-goldfish-7v97p66qjr7hx9j5-3000.app.github.dev'
+
   # Allow server to be hosted on any URL
   config.hosts.clear
   # Allow better_errors to work in online IDE

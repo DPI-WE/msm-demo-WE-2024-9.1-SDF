@@ -9,6 +9,10 @@
     <%= movie.year %>
   </p>
 
+  <% if movie.poster.attached? %>
+    <%= image_tag(movie.poster, class: "img-thumbnail") %>
+  <% end %>
+
   <p>
     <strong>Director:</strong>
     <%= link_to movie.director.name, director_path(movie.director) %>
@@ -18,9 +22,6 @@
     <p>
       <strong>Submitted By:</strong>
       <%= movie.submitter.username %>
-      <% if movie.submitter.avatar.attached? %>
-        <%= image_tag(movie.submitter.avatar, class: "img-thumbnail") %>
-      <% end %>
     </p>
   <% end %>
 

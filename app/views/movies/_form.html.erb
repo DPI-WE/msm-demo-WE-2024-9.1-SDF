@@ -20,6 +20,11 @@
     <%= form.label :year, class: "form-label" %>
     <%= form.text_field :year, class: "form-control" %>
   </div>
+
+  <div>
+    <%= form.label :poster, class: "form-label" %>
+    <%= form.file_field :poster, class: "form-control" %>
+  </div>
   
   <div class="my-2">
     <%= render "movies/directors/form", form: form %>
