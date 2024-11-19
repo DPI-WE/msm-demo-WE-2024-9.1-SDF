@@ -1,0 +1,21 @@
+<div class="container my-5">
+  <h1>Welcome</h1>
+
+  <p>Hi <%= @user.username %>, </p>
+
+  <p>Thank you for signing up. We are so happy to have you. If you have any questions, comments, or concerns, please reply to this email. </p>
+
+  <p>For now, I encourage you to check out our top 3 most popular movies:</p>
+
+  <div class="row my-5">
+    <% Movie.order_by_popularity.limit(3).each do |movie| %>
+      <div class="col">
+        <%= render "movies/card", movie: movie %>
+      </div>
+    <% end %>
+  </div>
+
+  <p>Happy Viewing 🎥🎬🍿</p>
+
+  Ian
+</div>

@@ -1,0 +1,13 @@
+<div class="card" style="width: 18rem;">
+  <% if movie.poster.attached? %>
+    <%= image_tag movie.poster, class: "card-img-top", alt: "movie poster" %>
+  <% end %>
+  <div class="card-body">
+    <h5 class="card-title"><%= movie.title %></h5>
+    <p class="card-text">
+      Director: <%= movie.director.name %>
+      Year: <%= movie.year %>
+    </p>
+    <%= link_to 'See Details', movie_url(movie), class: "btn btn-primary" %>
+  </div>
+</div>

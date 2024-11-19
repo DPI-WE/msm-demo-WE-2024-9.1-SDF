@@ -39,4 +39,10 @@ class User < ApplicationRecord
   has_many :submitted_movies, foreign_key: "submitter_id", class_name: "Movie"
 
   has_one_attached :avatar
+
+  after_create_commit :send_welcome_email
+
+  def send_welcome_email
+    UserMailer.with(user: self).welcome.deliver_now
+  end
 end
