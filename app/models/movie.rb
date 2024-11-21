@@ -25,7 +25,7 @@ class Movie < ApplicationRecord
 
   belongs_to :director
   accepts_nested_attributes_for :director, reject_if: :all_blank
-  belongs_to :submitter, class_name: "User"
+  belongs_to :submitter, class_name: "User", optional: true
 
   has_one_attached :poster
 
