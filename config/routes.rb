@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  draw(:pwa)
   devise_for :users
   resources :directors
   resources :analytics, only: [:index] do
