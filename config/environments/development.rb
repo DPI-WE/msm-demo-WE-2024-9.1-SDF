@@ -1,6 +1,15 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.after_initialize do
+    Bullet.enable        = true
+    Bullet.alert         = true
+    Bullet.bullet_logger = true
+    Bullet.console       = true
+    Bullet.rails_logger  = true
+    Bullet.add_footer    = true
+  end
+
   # TODO: refactor to handle different codespaces and dev environments like localhost:3000
   routes.default_url_options[:host] = 'https://silver-goldfish-7v97p66qjr7hx9j5-3000.app.github.dev'
 
