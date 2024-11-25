@@ -67,5 +67,4 @@ gem "stimulus-rails"
 gem "table_print"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-gem "cssbundling-rails"
 gem "sassc-rails"
