@@ -5,7 +5,7 @@ services:
     plan: free # make sure to set this to free or you'll get billed $$$
     buildCommand: "./bin/render-build.sh" # # we already created these two files for you
     startCommand: "./bin/render-start.sh"
-    envVars: # this section sets some ENV variables needed by Render for deployment
+    envVars:
       - key: SECRET_KEY_BASE
         generateValue: true
       - key: DATABASE_URL
@@ -24,8 +24,14 @@ services:
     buildCommand: bundle install
     startCommand: bundle exec good_job start
     envVars:
+      - key: SECRET_KEY_BASE
+        generateValue: true
       - key: DATABASE_URL
-        fromDatabase: msm_we_2024_9_1_sdf
+        fromDatabase:
+          name: msm_we_2024_9_1_sdf
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
       - key: RAILS_ENV
         value: production
       - key: GOOD_JOB_MAX_THREADS
