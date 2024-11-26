@@ -5,7 +5,7 @@ services:
     plan: free # make sure to set this to free or you'll get billed $$$
     buildCommand: "./bin/render-build.sh" # # we already created these two files for you
     startCommand: "./bin/render-start.sh"
-    envVars: # this section sets some ENV variables needed by Render for deployment
+    envVars:
       - key: SECRET_KEY_BASE
         generateValue: true
       - key: DATABASE_URL
@@ -16,6 +16,27 @@ services:
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
+
+  # worker is not available for free plan
+  # - name: msm_we_2024_9_1_sdf
+  #   type: worker
+  #   env: ruby
+  #   plan: free
+  #   buildCommand: bundle install
+  #   startCommand: bundle exec good_job start
+  #   envVars:
+  #     - key: SECRET_KEY_BASE
+  #       generateValue: true
+  #     - key: DATABASE_URL
+  #       fromDatabase:
+  #         name: msm_we_2024_9_1_sdf
+  #         property: connectionString
+  #     - key: RAILS_MASTER_KEY
+  #       sync: false
+  #     - key: RAILS_ENV
+  #       value: production
+  #     - key: GOOD_JOB_MAX_THREADS
+  #       value: 5
 
 databases:
   - name: msm_we_2024_9_1_sdf
