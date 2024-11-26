@@ -17,6 +17,20 @@ services:
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
 
+  - name: msm_we_2024_9_1_sdf
+    type: worker
+    env: ruby
+    plan: free
+    buildCommand: bundle install
+    startCommand: bundle exec good_job start
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase: my-database
+      - key: RAILS_ENV
+        value: production
+      - key: GOOD_JOB_MAX_THREADS
+        value: 5
+
 databases:
   - name: msm_we_2024_9_1_sdf
     databaseName: msm_we_2024_9_1_sdf
