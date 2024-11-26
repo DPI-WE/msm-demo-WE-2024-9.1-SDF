@@ -25,7 +25,7 @@ services:
     startCommand: bundle exec good_job start
     envVars:
       - key: DATABASE_URL
-        fromDatabase: my-database
+        fromDatabase: msm_we_2024_9_1_sdf
       - key: RAILS_ENV
         value: production
       - key: GOOD_JOB_MAX_THREADS
