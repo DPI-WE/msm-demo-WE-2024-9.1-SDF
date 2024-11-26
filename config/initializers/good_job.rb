@@ -5,7 +5,7 @@ Rails.application.configure do
     preserve_job_records: true,
     retry_on_unhandled_error: false,
     on_thread_error: -> (exception) { Rails.error.report(exception) },
-    execution_mode: :external,
+    execution_mode: :async,
     queues: '*',
     max_threads: 5,
     poll_interval: 30,
