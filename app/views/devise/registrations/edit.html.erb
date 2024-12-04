@@ -22,6 +22,10 @@
     <%= f.file_field :avatar %>
   </div>
 
+  <% if resource.avatar.attached? %>
+    <%= image_tag resource.avatar, class: "card-img-top w-25" %>
+  <% end %>
+
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
