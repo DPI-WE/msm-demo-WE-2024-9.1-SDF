@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   draw(:admin)
   draw(:pwa)
-  devise_for :users
+  devise_for :users, controllers: {
+    omniauth_callbacks: "omniauth_callbacks",
+  }
   resources :directors
   resources :analytics, only: [:index] do
     collection do
